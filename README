@@ -1,0 +1,20 @@
+= Overview =
+This application is used to price options modelled under the Heston Stochastic Volatility Model.  It makes use of the OpenCL to build multiple kernels that make path realization.
+
+This program was created in part of the requirements to complete AMAT601.21 - Monte Carlo Methods in Finance, at the University of Calgary
+
+= Building =
+Being that great make files are grown from a fresh cutting, and never made from scratch, I lumped everying in one file to make compilation easier.
+
+This program was build at tested on OS X
+# clang -framework OpenCL -o monteHestonSim monteHestonSim.c
+
+I believe an equivalent under linux would be:
+# gcc -lopencl -o monteHestonSim monteHestonSim.c
+
+Also you can compile the info program (#clang -framework OpenCL -o info info.c), which will provide information on your OpenCL capabilities.
+
+= Execution =
+The application itself will tell you about all its options
+
+./monteHestonSim -h 
